@@ -36,21 +36,24 @@ const settings = {
 
 const toggle = e => {
     const sec = e.target.innerHTML.toLowerCase()
+    console.log(main.ui[sec].classList, main.ui.aside.classList)
     if (main.ui[sec].classList.contains('collapsed')) {
         main.ui[sec].classList.remove('collapsed')
         main.ui.aside.classList.remove('collapsed')
     }
-    else 
+    else {
         main.ui[sec].classList.add('collapsed')
     
-    let allCollapsed = true
-    document.querySelectorAll('aside section').forEach(section => {
-        if (!section.classList.contains('collapsed'))
-            allCollapsed = false
-    })
+        let allCollapsed = true
+        document.querySelectorAll('aside section').forEach(section => {
+            if (!section.classList.contains('collapsed'))
+                allCollapsed = false
+        })
 
-    if (allCollapsed)
-        main.ui.aside.classList.add('collapsed')
+        console.log(allCollapsed)
+        if (allCollapsed)
+            main.ui.aside.classList.remove('collapsed')
+    }
 }
 
 main.ui.ipt.btn.addEventListener('click', () => {

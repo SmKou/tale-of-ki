@@ -85,6 +85,7 @@ button.min .max { display: none }
     left: 0;
     width: 100%;
     height: calc(100% - 6rem);
+    z-index: 10;
 }
 
 .dark .set { background: #222 }
