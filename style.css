@@ -1,0 +1,257 @@
+* {
+    box-sizing: border-box;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+}
+
+*::-webkit-scrollbar { display: none }
+
+html { font-size: 62.5% }
+
+body {
+    position: relative;
+    margin: 0;
+    font-family: 'Ubuntu Mono';
+    font-weight: 400;
+    font-size: 1.5em;
+    line-height: 1.2;
+}
+
+header {
+    height: 6rem;
+    border: 0.1rem solid black;
+    background: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+h1 {
+    position: relative;
+    margin: 0;
+    margin-left: 1.2rem;
+    padding-top: 0.6rem;
+    font-family: 'Honk';
+    font-size: 3.6rem;
+}
+
+h1 .title-lead {
+    position: absolute;
+    top: 0;
+    color: #909;
+    font-family: 'Ubuntu Mono';
+    font-size: 1.8rem;
+    
+}
+
+.rainbow { animation: 4s infinite rainbow }
+
+@keyframes rainbow {
+    from { color: #fff }
+    25% { color: #ee0 }
+    50% { color: #909 }
+    75% { color: #000 }
+    to { color: #fff }
+}
+
+.controls button {
+    margin: 0 0.1rem;
+    padding: 0.4rem 0.6rem;
+    border: 0.2rem solid #eee;
+    border-radius: 0.6rem;
+    color: #eee;
+    background: transparent;
+    font-family: 'Ubuntu Mono';
+    text-transform: uppercase;
+}
+
+.controls button:hover,
+.controls button:active {
+    color: #999;
+    background: #eee;
+}
+
+.controls button:last-of-type { margin-right: 0.8rem }
+
+button.max .min { display: none }
+button.min .max { display: none }
+
+/* ------------------------------------------ Settings */
+
+
+
+/* ------------------------------------------ UI */
+
+main { display: flex }
+main.dark { 
+    color: #eee;
+    background: #222;
+}
+main.light { background: #dff }
+
+@media screen and (orientation: landscape) {
+    main aside { width: 40% }
+}
+
+@media screen and (orientation: portrait) {
+    main aside {
+        position: fixed;
+        top: 6rem;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 6rem);
+        z-index: 10;
+    }
+}
+
+main article { width: 100% }
+
+main article,
+main aside { height: calc(100vh - 6rem) }
+
+.ui-text {
+    height: calc(100% - 2.4rem);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    overflow-y: scroll;
+}
+
+.ui-text p {
+    padding: 1.2rem;
+    text-wrap: pretty;
+}
+
+.ui-text p.speech {
+    position: relative;
+    max-width: 70%;
+    border: 0.2rem solid #000;
+    border-radius: 1.2rem;
+}
+
+.ui-text p.speech::before,
+.ui-text p.speech::after {
+    position: absolute;
+    width: 0;
+    height: 0;
+    content: '';
+}
+
+.ui-text p.speech::before {
+    bottom: 0.3rem;
+    right: -1.7rem;
+    border-left: 1.7rem solid #000;
+    border-top: 1.8rem solid transparent;
+    border-bottom: 1.8rem solid transparent;
+    z-index: 2;
+}
+
+.ui-text p.speech::after {
+    bottom: 0.55rem;
+    right: -1.5rem;
+    border-left-width: 1.6rem;
+    border-left-style: solid;
+    border-top: 1.6rem solid transparent;
+    border-bottom: 1.6rem solid transparent;
+    z-index: 3;
+}
+
+.dark .ui-text p.speech::after { border-left-color: #222 }
+.light .ui-text p.speech::after { border-left-color: #dff }
+
+.ui-text .player { align-self: flex-start }
+
+.ui-text .player.speech::before {
+    bottom: 0.3rem;
+    left: -1.7rem;
+    border-left: none;
+    border-right: 1.7rem solid #000;
+}
+
+.ui-text .player.speech::after {
+    left: -1.5rem;
+    border-left: none;
+    border-right-width: 1.6rem;
+    border-right-style: solid;
+}
+
+.dark .ui-text .player.speech::after { border-right-color: #222 }
+.light .ui-text .player.speech::after { border-right-color: #dff }
+
+.ui-ipt {
+    position: relative;
+    width: 100%;
+    height: 2.4rem;
+    display: flex;
+}
+
+.ui-ipt textarea {
+    width: 100%;
+    margin: 0;
+    padding-top: 0.4rem;
+    padding-left: 1.2rem;
+    border: 0;
+    border-top: 0.1rem solid #000;
+    border-bottom: 0.1rem solid #000;
+    outline: none;
+    background: transparent;
+    font-family: 'Ubuntu Mono';
+    font-size: 1.6rem;
+    resize: none;
+}
+
+.dark .ui-ipt textarea { color: #eee }
+.light .ui-ipt textarea { color: #111 }
+
+.ui-ipt button {
+    border-width: 0.2rem;
+    border-style: solid;
+    outline: 0;
+    background: transparent;
+    font-family: 'Ubuntu Mono';
+    font-size: 1.6rem;
+}
+
+.dark .ui-ipt button {
+    border-color: #eee;
+    color: #eee;
+}
+
+.dark .ui-ipt button:hover,
+.dark .ui-ipt button:active {
+    color: #999;
+    background: #eee;
+}
+
+.light .ui-ipt button {
+    border-color: #111;
+    color: #111;
+}
+
+.light .ui-ipt button:hover,
+.light .ui-ipt button:active {
+    color: #333;
+    background: #111;
+}
+
+aside {
+    border-left: 0.2rem solid #000;
+    display: flex;
+    flex-direction: column;
+}
+
+.dark aside { background: #0004 }
+.light aside { background: #0001 }
+
+aside section {
+    height: 100%;
+    padding: 0.6rem 1.2rem;
+    border-bottom: 0.2rem solid #000;
+    overflow-y: scroll;
+}
+
+aside section:last-of-type { border-bottom: 0 }
+
+.collapsed { display: none }
