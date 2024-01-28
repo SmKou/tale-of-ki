@@ -9,7 +9,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Honk&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="light">
+    <article class="splash-screen"></article>
     <header>
         <h1><span class="title-lead rainbow">Tale of</span>Kibakhan</h1>
         <div class="controls">
@@ -23,8 +24,32 @@
             <button id="set-btn">Set</button>
         </div>
     </header>
-    <article class="set"></article>
-    <main class="light">
+    <article class="set">
+        <div class="container">
+            <h2>Settings</h2>
+            <fieldset>
+                <legend>Title Color</legend>
+                <div class="setting">
+                    <span>Changing</span>
+                    <div class="toggle-switch title-color on">
+                        <button class="on">on</button>
+                        <button class="off">off</button>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Color Mode</legend>
+                <div class="setting">
+                    <span>Mode</span>
+                    <div class="toggle-switch color-mode on">
+                        <button class="on">dark</button>
+                        <button class="off">light</button>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+    </article>
+    <main>
         <article>
             <section class="ui-text"></section>
             <section class="ui-ipt">
@@ -32,7 +57,7 @@
                 <button>Submit</button>
             </section>
         </article>
-        <aside>
+        <aside class="collapsed">
             <section class="ui-stats">
                 <h3>Stats</h3>
                 <div class="info"></div>

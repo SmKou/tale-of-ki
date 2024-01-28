@@ -21,6 +21,19 @@ const main = {
     }
 }
 
+const settings = {
+    title_color: {
+        switch: document.querySelector('.title-color'),
+        on: document.querySelector('.title-color .on'),
+        off: document.querySelector('.title-color .off')
+    },
+    color_mode: {
+        switch: document.querySelector('.color-mode'),
+        on: document.querySelector('.color-mode .on'),
+        off: document.querySelector('.color-mode .off')
+    }
+}
+
 const toggle = e => {
     const sec = e.target.innerHTML.toLowerCase()
     if (main.ui[sec].classList.contains('collapsed')) {
@@ -39,13 +52,6 @@ const toggle = e => {
     if (allCollapsed)
         main.ui.aside.classList.add('collapsed')
 }
-
-main.ui.ipt.text.addEventListener('keydown', e => {
-    if (e.key === "Enter") {
-        e.preventDefault()
-        main.ui.ipt.btn.click()
-    }
-})
 
 main.ui.ipt.btn.addEventListener('click', () => {
     const val = main.ui.ipt.text.value
@@ -74,3 +80,34 @@ main.ctrl.minmax.addEventListener('click', e => {
         document.exitFullscreen()
     }
 })
+
+main.ui.ipt.text.addEventListener('keydown', e => {
+    if (e.key === "Enter") {
+        e.preventDefault()
+        main.ui.ipt.btn.click()
+    }
+})
+
+/* --------------------------------------------- Settings */
+
+// If settings disabled (localstorage inaccessible)
+
+settings.title_color.on.addEventListener('click', () => {
+    if (settings.title_color.switch.classList.contains('on')) return;
+    settings.title_color.switch.classList.toggle('on')
+})
+settings.title_color.off.addEventListener('click', () => {
+    if (!settings.title_color.switch.classList.contains('on')) return;
+    settings.title_color.switch.classList.toggle('on')
+})
+
+settings.color_mode.on.addEventListener('click', () => {
+    if (settings.color_mode.switch.classList.contains('on')) return;
+    settings.color_mode.switch.classList.toggle('on')
+})
+settings.color_mode.off.addEventListener('click', () => {
+    if (!settings.color_mode.switch.classList.contains('on')) return;
+    settings.color_mode.switch.classList.toggle('on')
+})
+
+// Save to localstorage

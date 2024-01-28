@@ -79,16 +79,95 @@ button.min .max { display: none }
 
 /* ------------------------------------------ Settings */
 
+.set {
+    position: absolute;
+    top: 6rem;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 6rem);
+}
+
+.dark .set { background: #222 }
+.light .set { background: #dff }
+
+.set .container {
+    width: 95%;
+    max-width: 84rem;
+    margin: 0 auto;
+}
+
+.set .setting { 
+    display: flex;
+    align-items: center;
+}
+
+.toggle-switch {
+    margin: 0 0.8rem;
+    padding: 0.6rem;
+}
+
+.toggle-switch button {
+    padding: 0.6rem;
+    border: none;
+    outline: 0;
+    font-family: 'Ubuntu Mono';
+    font-size: 1.6rem;
+}
+
+.title-color.toggle-switch,
+.color-mode.toggle-switch {
+    border: 0.2rem solid black;
+    background: white;
+}
+
+.title-color.toggle-switch .on,
+.color-mode.toggle-switch .on {
+    color: #666;
+    background: transparent;
+}
+
+.title-color.toggle-switch .off,
+.color-mode.toggle-switch .off {
+    color: white;
+    background: black;
+    font-weight: bold;
+}
+
+.title-color.toggle-switch.on,
+.color-mode.toggle-switch.on {
+    border: 0.2rem solid black;
+    background: black;
+}
+
+.title-color.toggle-switch.on .on { 
+    color: black;
+    background: linear-gradient(90deg, white, #ee0, #909);
+    font-weight: bold;
+}
+
+.color-mode.toggle-switch.on .on { 
+    color: black;
+    background: white;
+    font-weight: bold;
+}
+
+.title-color.toggle-switch.on .off,
+.color-mode.toggle-switch.on .off {
+    color: #aaa;
+    background: transparent;
+}
+
 
 
 /* ------------------------------------------ UI */
 
 main { display: flex }
-main.dark { 
+
+.dark main { 
     color: #eee;
     background: #222;
 }
-main.light { background: #dff }
+.light main { background: #dff }
 
 @media screen and (orientation: landscape) {
     main aside { width: 40% }
