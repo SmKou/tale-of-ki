@@ -22,16 +22,9 @@ const main = {
 }
 
 const settings = {
-    title_color: {
-        switch: document.querySelector('.title-color'),
-        on: document.querySelector('.title-color .on'),
-        off: document.querySelector('.title-color .off')
-    },
-    color_mode: {
-        switch: document.querySelector('.color-mode'),
-        on: document.querySelector('.color-mode .on'),
-        off: document.querySelector('.color-mode .off')
-    }
+    switches: document.querySelectorAll('.setting .toggle-switch'),
+    on: document.querySelectorAll('.toggle-switch .on'),
+    off: document.querySelectorAll('.toggle-switch .off')
 }
 
 const toggle = e => {
@@ -95,22 +88,18 @@ main.ui.ipt.text.addEventListener('keydown', e => {
 
 // If settings disabled (localstorage inaccessible)
 
-settings.title_color.on.addEventListener('click', () => {
-    if (settings.title_color.switch.classList.contains('on')) return;
-    settings.title_color.switch.classList.toggle('on')
-})
-settings.title_color.off.addEventListener('click', () => {
-    if (!settings.title_color.switch.classList.contains('on')) return;
-    settings.title_color.switch.classList.toggle('on')
-})
-
-settings.color_mode.on.addEventListener('click', () => {
-    if (settings.color_mode.switch.classList.contains('on')) return;
-    settings.color_mode.switch.classList.toggle('on')
-})
-settings.color_mode.off.addEventListener('click', () => {
-    if (!settings.color_mode.switch.classList.contains('on')) return;
-    settings.color_mode.switch.classList.toggle('on')
-})
+for (let i = 0; i < settings.on.length; ++i) {
+    const eSwitch = settings.switches[i]
+    settings.on[i].addEventListener('click', () => {
+        const [, s, mode] = eSwitch.classList
+        if (mode) return;
+        eSwitch.classList.toggle('on')
+    })
+    settings.off[i].addEventListener('click', () => {
+        const [, s, mode] = eSwitch.classList
+        if (!mode) return;
+        eSwitch.classList.toggle('on')
+    })
+}
 
 // Save to localstorage

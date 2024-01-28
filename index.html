@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Honk&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="light">
+<body class="dark">
     <article class="splash-screen"></article>
     <header>
         <h1><span class="title-lead rainbow">Tale of</span>Kibakhan</h1>
@@ -53,22 +53,47 @@
             <fieldset>
                 <legend>Title Color</legend>
                 <div class="setting">
-                    <span>Changing</span>
+                    <div>Changing color</div>
                     <div class="toggle-switch title-color on">
                         <button class="on">on</button>
                         <button class="off">off</button>
                     </div>
                 </div>
+                <p>You may notice when you started the game that the words "Tale of" in the title flash between colors. Aware this may be distracting or unwanted by some, I have included the option to turn off this feature.</p>
             </fieldset>
             <fieldset>
                 <legend>Color Mode</legend>
                 <div class="setting">
-                    <span>Mode</span>
+                    <div>Interface colors</div>
                     <div class="toggle-switch color-mode on">
                         <button class="on">dark</button>
                         <button class="off">light</button>
                     </div>
                 </div>
+                <p>The color mode affects the splash screen, settings, and user interface. What it does not affect is the header, whether or not it is visible.</p>
+            </fieldset>
+            <fieldset>
+                <legend>Use of Memory</legend>
+                <div class="setting">
+                    <div>Storage access</div>
+                    <div class="toggle-switch mem-access on">
+                        <button class="on">Use</button>
+                        <button class="off">Do Not use</button>
+                    </div>
+                </div>
+                <p>Access to browser storage enables the game to save and restore your progress, as well as to adapt the narrative to your stats and actions. You can play without access turned on. If you plan to play through a new game each session and to play the game as a traditional text adventure, turn off this feature. The game will still use browser storage, but just to save this one setting.</p>
+            </fieldset>
+            <fieldset>
+                <legend>Narrator</legend>
+                <div class="setting">
+                    <div>Literary voice</div>
+                    <div class="toggle-switch narrator on">
+                        <button class="on">Kibakhan</button>
+                        <button class="off">Seraph</button>
+                    </div>
+                </div>
+                <p><strong>Kibakhan</strong> speaks in first person, narrating themselves and the environment. When narrating you, they are helped by the Seraph narrator.</p>
+                <p><strong>Seraph</strong> is a third-person narrator for the overall story. They narrate in the traditional literary style.</p>
             </fieldset>
         </div>
     </article>
