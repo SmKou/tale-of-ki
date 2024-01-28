@@ -85,16 +85,24 @@ button.min .max { display: none }
     left: 0;
     width: 100%;
     height: calc(100% - 6rem);
+    overflow-y: scroll;
     z-index: 10;
 }
 
-.dark .set { background: #222 }
+.dark .set { 
+    color: #eee;
+    background: #222 
+}
 .light .set { background: #dff }
 
 .set .container {
     width: 95%;
     max-width: 84rem;
     margin: 0 auto;
+}
+
+.set fieldset {
+    margin: 1.2rem 0;
 }
 
 .set .setting { 
@@ -115,50 +123,112 @@ button.min .max { display: none }
     font-size: 1.6rem;
 }
 
-.title-color.toggle-switch,
+.toggle-switch, .toggle-switch.on {
+    border-width: 0.2rem;
+    border-style: solid;
+}
+
+.toggle-switch .off,
+.toggle-switch.on .on { font-weight: bold }
+
+.toggle-switch .on,
+.toggle-switch.on .off { background: transparent }
+
+.title-color.toggle-switch, 
 .color-mode.toggle-switch {
-    border: 0.2rem solid black;
+    border-color: black;
     background: white;
 }
 
-.title-color.toggle-switch .on,
-.color-mode.toggle-switch .on {
-    color: #666;
-    background: transparent;
-}
+.title-color.toggle-switch .on, 
+.color-mode.toggle-switch .on { color: #666 }
 
-.title-color.toggle-switch .off,
+.title-color.toggle-switch .off, 
 .color-mode.toggle-switch .off {
     color: white;
     background: black;
-    font-weight: bold;
 }
 
-.title-color.toggle-switch.on,
+.title-color.toggle-switch.on, 
 .color-mode.toggle-switch.on {
-    border: 0.2rem solid black;
+    border-color: black;
     background: black;
 }
 
 .title-color.toggle-switch.on .on { 
     color: black;
     background: linear-gradient(90deg, white, #ee0, #909);
-    font-weight: bold;
 }
 
 .color-mode.toggle-switch.on .on { 
     color: black;
     background: white;
-    font-weight: bold;
 }
 
-.title-color.toggle-switch.on .off,
-.color-mode.toggle-switch.on .off {
-    color: #aaa;
+.title-color.toggle-switch.on .off, 
+.color-mode.toggle-switch.on .off { color: #aaa }
+
+.mem-access.toggle-switch {
+    border-color: #0b190c;
+    background: #0b190c;
+}
+
+.mem-access.toggle-switch .on { 
+    color: #fffd6e;
     background: transparent;
 }
 
+.mem-access.toggle-switch .off {
+    color: #f3f1ed;
+    background: #ff6100;
+}
 
+.mem-access.toggle-switch.on {
+    border-color: #f3f1ed;
+    background: #f3f1ed;
+}
+
+.mem-access.toggle-switch.on .on {
+    color: #fffd6e;
+    background: #0b190c;
+}
+
+.mem-access.toggle-switch.on .off { 
+    color: #ff6100;
+    background: transparent;
+}
+
+.narrator.toggle-switch {
+    border-color: #fde767;
+    background: #fde767;
+}
+
+.narrator.toggle-switch .on { 
+    color: #d04848;
+    background: transparent;
+}
+.narrator.toggle-switch .off {
+    color: #f3b95f;
+    background: #6895d2;
+}
+
+.narrator.toggle-switch.on {
+    border-color: #f3b957;
+    background: #f3b957;
+}
+
+.narrator.toggle-switch.on .on {
+    color: #fde767;
+    background: #d04848;
+}
+.narrator.toggle-switch.on .off { 
+    color: #6895d2; 
+    background: transparent;
+}
+
+.dark .title-color.toggle-switch,
+.dark .color-mode.toggle-switch,
+.dark .mem-access.toggle-switch { border-color: #333 }
 
 /* ------------------------------------------ UI */
 
