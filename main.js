@@ -24,8 +24,26 @@ const main = {
 const settings = {
     switches: document.querySelectorAll('.setting .toggle-switch'),
     on: document.querySelectorAll('.toggle-switch .on'),
-    off: document.querySelectorAll('.toggle-switch .off')
+    off: document.querySelectorAll('.toggle-switch .off'),
+    val: {
+        'splash-screen': false,
+        'title-color': true, // true = changing color
+        'color-mode': true, // true = dark
+        'mem-access': true, // true = use local storage
+        'narrator': true // true = kibakhan
+    },
+    storage: ''
 }
+
+
+
+const splash_screen = document.querySelector('.splash-screen')
+const enter_btn = document.getElementById('enter')
+
+enter_btn.addEventListener('click', () => {
+    splash_screen.classList.add('collapsed')
+    settings.val['splash-screen'] = true
+})
 
 const toggle = e => {
     const sec = e.target.innerHTML.toLowerCase()
@@ -94,11 +112,39 @@ for (let i = 0; i < settings.on.length; ++i) {
         const [, s, mode] = eSwitch.classList
         if (mode) return;
         eSwitch.classList.toggle('on')
+        switch (s) {
+            case 'title-color':
+                document.querySelector('header h1 .title-lead').classList.add('rainbow')
+                break
+            case 'color-mode':
+                document.querySelector('body').classList.remove('light')
+                document.querySelector('body').classList.add('dark')
+                break
+            case 'mem-access':
+                break
+            case 'narrator':
+                break
+        }
+        settings.val[s] = true
     })
     settings.off[i].addEventListener('click', () => {
         const [, s, mode] = eSwitch.classList
         if (!mode) return;
         eSwitch.classList.toggle('on')
+        switch (s) {
+            case 'title-color':
+                document.querySelector('header h1 .title-lead').classList.remove('rainbow')
+                break
+            case 'color-mode':
+                document.querySelector('body').classList.remove('dark')
+                document.querySelector('body').classList.add('light')
+                break
+            case 'mem-access':
+                break
+            case 'narrator':
+                break
+        }
+        settings.val[s] = false
     })
 }
 
