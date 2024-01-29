@@ -17,7 +17,16 @@ Get ready. Kibakhan commands you.
 
 ## Complete Setup
 
+## Development Queue
+- Splash Screen: adjust button to open intro
+- Intro: add content and functionality
+- Settings toggle: implement mem-access and narrator
+- Local storage access and use
+
 ## Known Bugs
+
+- Aside does not appear even when class "collapsed" removed
+
 
 ## License
 
