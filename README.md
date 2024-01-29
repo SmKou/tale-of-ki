@@ -17,6 +17,12 @@ Get ready. Kibakhan commands you.
 
 ## Complete Setup
 
+Deploy to Github Pages from subdirectory:
+```bash
+git subtree push --prefix app origin gh-pages
+```
+**Note:** No need to create gh-pages branch locally
+
 ## Development Queue
 - Splash Screen: adjust button to open intro
 - Intro: add content and functionality
