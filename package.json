@@ -5,6 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite serve ./app",
+    "dev-kibakhan": "vite serve ./app/kibkhan",
+    "dev-kibikuun": "vite serve ./app/kibikuun",
     "build": "vite build",
     "preview": "vite preview"
   },

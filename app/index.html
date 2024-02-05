@@ -3,116 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tale of Kibakhan</title>
+    <title>Tale of Ki series</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Honk&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+            scroll-behavior: smooth;
+        }
+
+        *::-webkit-scrollbar { display: none }
+
+        html { font-size: 62.5% }
+
+        body {
+            position: relative;
+            margin: 0;
+            font-family: 'Ubuntu Mono';
+            font-weight: 400;
+            font-size: 1.5em;
+            line-height: 1.2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            width: 95%;
+            max-width: 42rem;
+            padding-top: 4rem;
+        }
+
+        .no-disp { display: none }
+    </style>
 </head>
-<body class="dark">
-    <article class="splash-screen">
-        <div class="container">
-            <h1><span class="title-lead rainbow">Tale of</span>Kibakhan</h1>
-            <button id="enter">Enter Game</button>
-        </div>
-    </article>
-    <article class="intro-screen"></article>
-    <header>
-        <h1><span class="title-lead rainbow">Tale of</span>Kibakhan</h1>
-        <div class="controls">
-            <button id="act-btn">Act</button>
-            <button id="stats-btn">Stats</button>
-            <button id="bag-btn">Bag</button>
-            <button class="minmax-btn max">
-                <span class="min">Min</span>
-                <span class="max">Max</span>
-            </button>
-            <button id="set-btn">Set</button>
-        </div>
-    </header>
-    <main>
-        <article>
-            <section class="ui-text"></section>
-            <section class="ui-ipt">
-                <textarea></textarea>
-                <button>Submit</button>
-            </section>
-        </article>
-        <aside class="collapsed">
-            <section class="ui-stats">
-                <h3>Stats</h3>
-                <div class="info"></div>
-            </section>
-            <section class="ui-bag">
-                <h3>Bag</h3>
-                <div class="info"></div>
-            </section>
-            <section class="ui-act">
-                <h3>Actions</h3>
-                <div class="info"></div>
-            </section>
-        </aside>
-    </main>
-    <article class="set">
-        <div class="container">
-            <h2>Settings</h2>
-            <fieldset>
-                <legend>Title Color</legend>
-                <div class="setting">
-                    <div>Changing color</div>
-                    <div class="toggle-switch title-color on">
-                        <button class="on">on</button>
-                        <button class="off">off</button>
-                    </div>
-                </div>
-                <p>You may notice when you started the game that the words "Tale of" in the title flash between colors. Aware this may be distracting or unwanted by some, I have included the option to turn off this feature.</p>
-            </fieldset>
-            <fieldset>
-                <legend>Color Mode</legend>
-                <div class="setting">
-                    <div>Interface colors</div>
-                    <div class="toggle-switch color-mode on">
-                        <button class="on">dark</button>
-                        <button class="off">light</button>
-                    </div>
-                </div>
-                <p>The color mode affects the splash screen, settings, and user interface. What it does not affect is the header, whether or not it is visible.</p>
-            </fieldset>
-            <fieldset>
-                <legend>Use of Memory</legend>
-                <div class="setting">
-                    <div>Storage access</div>
-                    <div class="toggle-switch mem-access on">
-                        <button class="on">Use</button>
-                        <button class="off">Do Not use</button>
-                    </div>
-                </div>
-                <p>Access to browser storage enables the game to save and restore your progress, as well as to adapt the narrative to your stats and actions. You can play without access turned on. If you plan to play through a new game each session and to play the game as a traditional text adventure, turn off this feature. The game will still use browser storage, but just to save this one setting.</p>
-            </fieldset>
-            <fieldset>
-                <legend>Narrator</legend>
-                <div class="setting">
-                    <div>Literary voice</div>
-                    <div class="toggle-switch narrator on">
-                        <button class="on">Kibakhan</button>
-                        <button class="off">Seraph</button>
-                    </div>
-                </div>
-                <p><strong>Kibakhan</strong> speaks in first person, narrating themselves and the environment. When narrating you, they are helped by the Seraph narrator.</p>
-                <p><strong>Seraph</strong> is a third-person narrator for the overall story. They narrate in the traditional literary style.</p>
-            </fieldset>
-        </div>
-    </article>
-    <article class="warning">
-        <div class="container">
-            <h3>Warning!</h3>
-            <p>You are about to delete all of your progress. Do you still want to proceed?</p>
-            <div>
-                <button class="cont">Continue</button>
-                <button class="quit">Cancel</button>
-            </div>
-        </div>
-    </article>
+<body>
+    <div class="container">
+        <h1>Tales of Ki</h1>
+        <p>Meet the family of gremlins, Ki.</p>
+        <hr>
+        <details>
+            <summary>Kibakhan</summary>
+            <p>Sometimes, mistakes are inevitable. Whether conducted by stupidity, shame, a desire to belong, or anger, they happen and so, one must bear the consequences. More often though, life's consequences are strange and seemingly irrelevant. Hardly coherent enough to learn any lesson.</p>
+            <input id="iaa-ipt" pattern="/\d+/" />
+            <p class="iaa-warn no-disp"></p>
+            <p><span id="iaa-name">[Insert a name]</span> made a mistake. Now, they find themselves in the employ of a gremlin a few inches short of two feet, but says they are because of the point of their giant ears, wearing an oversized robe with many pockets who has a maze to traverse. The contract has been signed in blood.</p>
+            <p>Get ready. <a href="kibakhan/">Kibakhan</a> commands you.</p>
+        </details>
+        <details>
+            <summary>Kibikuun</summary>
+            <p>What is a story? No matter what the medium, a story can be found anywhere, telling itself over the course of a book, a game, or series. But if stories can be found anywhere and can form from the very experience of a story, it can be confusing who a story belongs to, right?</p>
+            <p>Kibikuun has a story. They are making their way to see their cousin, Kibakhan, in Final City, but to get there, they're going to need help and perhaps a ride. Which unfortunate souls will help Kibikuun to Final City? Remember, this isn't your story, but you're going to forget that soon enough.</p>
+            <p>Go! Join <a href="kibikuun/">Kibikuun</a> on their quest!</p>
+        </details>
+    </div>
     <script src="main.js"></script>
 </body>
 </html>
